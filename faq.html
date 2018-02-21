@@ -1,0 +1,684 @@
+<div layout="column" layout-gt-md="row" flex>
+
+<md-card flex><md-card-content><div class="md-headline">FAQ</div><md-list>
+
+<md-list-item><h3>Beginner stuff</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_monero=!q_monero">What is Monero?</a>
+        <p layout-padding ng-show="q_monero">
+        	Monero is a secure, private, and untraceable cryptocurrency. It is open-source and accessible to all. Despite many other cryptocurrencies, it is profitable to mine Monero on usual personal computers (CPU and GPU).
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_start=!q_start">How do I start mining on this pool?</a>
+        <p layout-padding ng-show="q_start">
+		What you need:
+
+		<md-list>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;A Monero payment address</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;A miner<md-list>
+				<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;You can find basic instructions in "Setup Miner" after you enter your payment address on <a href="https://moneroocean.stream/#/dashboard" target="_blank">dashboard page</a>.</span></md-list-item>
+				<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;You can also mine right in your browser. Just press "Web Mining".</span></md-list-item>
+				<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Another option is to download a miner. Some examples:<md-list>
+					<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;CPU: <a href="https://github.com/xmrig/xmrig/releases" target="_blank">xmrig</a>, <a href="https://github.com/fireice-uk/xmr-stak-cpu/releases" target="_blank">xmr-stak-cpu</a></span></md-list-item>
+					<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;AMD GPU: <a href="https://github.com/fireice-uk/xmr-stak-amd/releases" target="_blank">xmr-stak-amd</a>, <a href="https://github.com/OhGodAPet/wolf-xmr-miner/releases" target="_blank">wolf-xmr-miner</a></span></md-list-item>
+					<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;nVidia GPU: <a href="https://github.com/xmrig/xmrig-nvidia/releases" target="_blank">xmrig-nvidia</a>, <a href="https://github.com/fireice-uk/xmr-stak-nvidia/releases" target="_blank">xmr-stak-nvidia</a>, <a href="https://github.com/KlausT/ccminer-cryptonight/releases" target="_blank">ccminer-cryptonight</a></span></md-list-item>
+				</md-list></span></md-list-item>
+			</md-list></span></md-list-item>
+		</md-list>
+
+		If you are using a downloaded miner, be sure to specify the following:
+
+		<md-list>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Pool: Format it as gulf.moneroocean.stream:#####, with ##### being the port number. The list of ports can be found at the <a href="https://moneroocean.stream/#/ports" target="_blank">ports page</a>.</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Username: Use your payment address.</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Password: Format it as &lt;Worker_name:Some_password&gt;. To receive email notifications about worker downtimes, set the Some_password as your email. Please note that the first string you use after the : in your miner password will be your initial password on the website. This password will be used to access further options on the online dashboard.</span></md-list-item>
+		</md-list>
+
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_gulf=!q_gulf">What pool address is recommented for mining?</a>
+        <p layout-padding ng-show="q_gulf">
+		I recommend using "gulf.moneroocean.stream" for all cases because 1) it will direct you to the closest server with the lowest
+                latency (and this is the most important thing to consider) and 2) it will automatically redirect your miner to other server if the nearest
+                one goes down for some reason. Using specific gateway nodes like "de.moneroocean.stream", "us.moneroocean.stream" and "jp.moneroocean.stream"
+		make sense only in very, very specific cases that likely do not apply to you.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_miner_number=!q_miner_number">Does joining a server near to my location give me more shares?</a>
+        <p layout-padding ng-show="q_miner_number">
+		Always prefer nearest server. It does not matter how many miners are on any particular server - rewards are distributed proportionally to
+		hash-rate you bring to the whole pool.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_miner=!q_miner">What will be installed if I will run automatic CPU miner setup script from this site?</a>
+        <p layout-padding ng-show="q_miner">
+		No malware will be installed. Setup scripts will try to install the latest stock binaries of <a href="https://github.com/xmrig/xmrig/releases" target="_blank">xmrig miner</a> and if they will not work (for example you have old version of Linux or antivirus removed them) it will try privately compiled versions of xmrig that have better compatibility with old version of Linux (for example CentOS 6) and are not detected by know antivirus software. Script will also try to configure miner to run in low priority mode so it will not affect usual programs and setup miner to be activated after reboot. Setup scripts have quite verbose output and will comment every single step they are doing.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_uninstall=!q_uninstall">How I can uninstall miner installed using moneroocean CPU miner setup scripts?</a>
+        <p layout-padding ng-show="q_uninstall">
+		If you no longer want to mine using miner that was installed using setup script from moneroocean site you can disable it using these directions:
+
+		<md-list>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;On Windows host remove moneroocean_miner.bat from
+				%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup or %USERPROFILE%\Start Menu\Programs\Startup
+				directory if you installed miner under non admin mode otherwise run "sc delete moneroocean_miner" command under admin
+				command prompt.
+			</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;On Linux host remove call to moneroocean/miner.sh
+				script in the bottom of your $HOME/.profile file or run "sudo systemctl stop moneroocean_miner.service" if setup script
+				was executed with password-less sudo.
+			</span></md-list-item>
+		</md-list>
+
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_waves=!q_waves">Why does my hashrate on the dashboard fluctuate?</a>
+        <p layout-padding ng-show="q_waves">
+		It is normal for waves to have amplitude within 20% of your average hashrate.
+		Hashrate fluctuations on website happens because pool have no idea what is your miner hashrate and it derives it from rate of its submitted results that can fluctuate based on your miner luck.
+		Usually the more miners you have the less their overall fluctuation will be (unless they are hidden behind xmr-node-proxy which hashrate fluctuations behave like one miner).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_web_miner=!q_web_miner">Why is the web miner on the web site is not working (shows 0 hashrate)?</a>
+        <p layout-padding ng-show="q_web_miner">
+		Try to use your browser's incognito mode or some other browser. If it still does not work please try to use
+		<a href="https://webminerpool.com/" target="_blank">https://webminerpool.com</a>, put your wallet address and select moneroocean.stream
+		as your mining pool. If this works, please write to <a href="mailto:support@moneroocean.stream">support@moneroocean.stream</a> to let
+		us know about the issue.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_worker_name=!q_worker_name">Is it possible to specify workers after wallet address?</a>
+        <p layout-padding ng-show="q_worker_name">
+		Yes, you can place worker name after wallet address (after . character like this: ".&lt;worker name&gt;").
+		Also it is possible (and actually a more common way) to place worket name in your miner password, like this "&lt;worker name&gt;:&lt;pool password&gt;",
+ 		where :&lt;pool password&gt; part is optional and needed if you want to set a pool UI password you can use to login your wallet options on the mining pool website.
+		Optionally this &lt;pool password&gt; can be your email so you can recieve notifications about worket downtimes.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_email=!q_email">How contact pool operator?</a>
+        <p layout-padding ng-show="q_email">
+		For private matters, please write an email to <a href="mailto:support@moneroocean.stream">support@moneroocean.stream</a> or contact us via <a href="https://twitter.com/MoneroOcean" target="_blank">@MoneroOcean</a> for public matters.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_ban_addr=!q_ban_addr">What is malware/botnet policy on this pool?</a>
+        <p layout-padding ng-show="q_ban_addr">
+		If I will get enough evidence that some wallet address on the pool is used for malware/botnet activities then I will block this address
+		from further mining. By enough evidence I mean at least several reports from different sources. And by address block I mean that 
+		miners that try to use this address will be rejected. I do not plan to freeze already mined funds (total due), so they can be retrieved
+		by setting lower threshold in Dashboard Options. If you think you can be accursed of this I strongly recommend to set you dashboard password
+		to valid email address, so I will have a chance to contact you after first such report and you will have ability to set your threshold in
+		case of wallet address block later.
+        </p></span></md-list-item>
+
+
+<md-list-item><h3>About this pool</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_main=!q_main">What are the main benefits of this pool?</a>
+        <p layout-padding ng-show="q_main">
+		Here are main benefits that this pool provides:
+		<ng-include src="'user/help/welcome.html'"></ng-include>
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_basis=!q_basis">On what software this pool engine and GUI is based?</a>
+        <p layout-padding ng-show="q_basis">
+		This pool software is based on <a href="https://github.com/Snipa22/nodejs-pool" target="_blank">nodejs-pool</a> pool engine.
+		Web GUI is based on <a href="https://github.com/mesh0000/poolui" target="_blank">poolui</a> implementation.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_pool_soft=!q_pool_soft">Can I see what are pool software modifications?</a>
+        <p layout-padding ng-show="q_pool_soft">
+		Yes. All core pool modifications are open sourced under original license and avaiable from <a href="https://github.com/MoneroOcean/nodejs-pool" target="_blank">nodejs-pool</a> GIT repository.
+		Web GUI modifications are not open sourced basically because I'm lazy to do it (and they are less important IMHO for community).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_unique=!q_unique">What are unique features of this pool compared to other nodejs-pools?</a>
+        <p layout-padding ng-show="q_unique">
+		This pool has custom improvements in the following areas:
+		<md-list>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Significantly reworked user interface with aim to improve its clarity and provide more relevant information</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Streamlined process to start mining on your devices without any special knowledge that only requires couple of mouse clicks and copy-pastes</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Advanced pool backend with automatic on-demand scaling that do not require to setup proxy by yourself</span></md-list-item>
+		</md-list>
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_inc_feat=!q_inc_feat">What features of nodejs-pool this pool provides?</a>
+        <p layout-padding ng-show="q_inc_feat">
+		This pool provides the following standard features of nodejs-pool:
+		<md-list>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;PaymentID payments and integrated address support for exchanges</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;PPLNS mining reward system</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Well-documented API with active development efforts</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Your own payment thresholds for normal wallets + exchanges!</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Ability to set payment threshold as low as 0.03 XMR</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Frequent payments (every 2 hours here)</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Fixed and dynamic port difficulty</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Per-worker hashrate charts</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;E-mail notification of miners down</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Support of all XMR proxies (xmr-node-proxy, xmrig-proxy and xmr-proxy)</span></md-list-item>
+		</md-list>
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_exc_feat=!q_exc_feat">What features of nodejs-pool this pool does not provide?</a>
+        <p layout-padding ng-show="q_exc_feat">
+		This pool does not provide the following standard features of nodejs-pool:
+		<md-list>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Payments direct to BTC via Shapeshift.io and XMR.to because we want to support Monero and not Bitcoin.</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;PPS and Solo mining reward systems. No PPS because it is exploitable by pool hoppers. No Solo because we want all pool miners to benefit from joint efforts.</span></md-list-item>
+		</md-list>
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_scaling=!q_scaling">What is advanced pool backend with automatic on-demand scaling?</a>
+        <p layout-padding ng-show="q_scaling">
+		This pool uses unique load balancers that will automatically move your miners to separate cloud hosts with xmr-node-proxy if they will start causing high load on the pool.
+		This allows offering support of very low speed (up to 5 H /s) miners with minimum difficulty 100 and ensuring consistently low pool load that all miners will benefit from.
+		During this transition to a proxy, your miners will be reconnected to a pool and all your miner hashrate stats will be joined under single "proxy" miner.
+		It still make sense to run your own xmr-node-proxy server for better control of your miners.
+	</p></span></md-list-item>
+
+<md-list-item><h3>Accessing wallet options</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_password=!q_password">What is my password to login "Options" on the web site?</a>
+        <p layout-padding ng-show="q_password">
+		There are two possibilities. Password can be not yet set and you need to set it first as shown next.
+		If it is already set (and not yet changed by you to a custom one) it will equal to the email address you used for the first time to submit result to this payment address.
+		More specifically it will equal to the first string you used after ":" sign in your miner password field (normally it should be your email address).
+		If you are sure your password is set and you can not remember it pool operator can reset it to unset state if you specify your payment address in the request to reset password to the <a href="mailto:support@moneroocean.stream">support@moneroocean.stream</a> email.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_password2=!q_password2">Please point me to the instructions for setting up a password on this site? I am guessing I will need to do this after it is reset.</a>
+        <p layout-padding ng-show="q_password2">
+		By default, your password is not set. You need to set it first. To do that you need to set password field in your miner to
+	        "&lt;your miner name&gt;:&lt;password&gt;", where &lt;you miner name&gt; is any name (without : character) and &lt;password&gt; is your
+	        password (depending on miner password can be in in command line, config.json or config.txt files).
+		Optionally you can use your email as your password if you want notifications about miner downtimes from the pool.
+	        You need to make sure you restart your miner and your miner submits at least one valid share for password to be set.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_miner_name=!q_miner_name">How could I know my miner name?</a>
+        <p layout-padding ng-show="q_miner_name">
+		As mentioned in the previous question you should set you miner password to "&lt;your miner name&gt;:&lt;password&gt;". However what is
+		&lt;your miner name&gt;? It can be any name actually (without ":" character) that describes your miner. It really only affects how this miner 
+		will be represented in the pool dashboard. You can use many miners with the same name if you do not need to see their separate statistics.
+		In fact I recommend to use single name if you have more than 50 uniform miners because it will help to reduce load to the pool.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+	<a href="" ng-click="q_password3=!q_password3">Some of my mining rigs has email as password, others had "x". I have tried entering this email as the password and it does not work. Why?</a>
+        <p layout-padding ng-show="q_password3">
+		You need to put your email after ":" character in the miner password field, like this: "x:&lt;email&gt;" (and do not forget to restart your miner).
+		After that, you can login to options using your email as password.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_password_miners=!q_password_miners">Do I need to setup password on all my miners?</a>
+        <p layout-padding ng-show="q_password_miners">
+		No. One miner is enough. Password will be set just after your first miner will submit share with password in "&lt;your miner name&gt;:&lt;password&gt;" form.
+		That is why it is important to remember it because if password is set all other attempts to change it from miners are ignored and
+		only pool operator can reset it to unset state.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_br_pass=!q_br_pass">I set my miner password to "&lt;worker&gt;:&lt;email@gmail.com&gt;". How can I login to "Options"?</a>
+        <p layout-padding ng-show="q_br_pass">
+		Your password to login "Options" would be &lt;email@gmail.com&gt;.
+        </p></span></md-list-item>
+
+
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_set_password=!q_set_password">I typed in a random password. I did not know I had to put my email for notifications. Do I need to ask pool admin to reset it?</a>
+        <p layout-padding ng-show="q_set_password">
+		No. Just login to options using your password and change it to valid email on "email setting" tab. Of course if you set random password
+		and forgot it you need to ask pool admin to reset it.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_stop_mining=!q_stop_mining">Should I stop mining while pool admin is reseting my password?</a>
+        <p layout-padding ng-show="q_stop_mining">
+		No. Normally you should not stop mining, unless you have many miners with different passwords you do not know and can not control (for example
+		you are asking to reset password for not your wallet :). Just make sure you are mining with password you want to set now. Also please make sure your
+		miner password is in "&lt;miner name&gt;:&lt;password you want to set&gt;" format (separated by : character).
+        </p></span></md-list-item>
+
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_last_resort=!q_last_resort">I'm using some GUI miner (MoneroSpelunker?) or web miner only. What I can do to set my password?</a>
+        <p layout-padding ng-show="q_last_resort">
+		Please try to go to the following link:
+		<br><br>https://moneroocean.stream/#/dashboard?addr=&lt;your wallet&gt;&amp;web_miner&amp;email=&lt;your email as password&gt;<br><br>
+		Where &lt;your wallet&gt; is well your monero wallet and &lt;your email as password&gt; is likely your real email if you want to receive updates
+		from pool about workers stopped hashing (but it can be any other string without &amp; character).
+		Wait until <b>web_miner_with_email_password_set</b> worker name will appear in your dashboard.
+		After that you can access options using &lt;your email as password&gt;. If <b>web_miner_with_email_password_set</b> worker do not appear,
+		then try other browser on computer where web mining will work fine.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_autopass=!q_autopass">I'm using miner that was setup automatically by MoneroOcean "setup script" and not used optional email field. How can I login to Options now?</a>
+        <p layout-padding ng-show="q_autopass">
+		On Windows edit %USERPROFILE%\moneroocean\config.json file (in Notepad for example) and replace "pass": "xxx" (where xxx is your miner name) by 
+		"pass": "xxx:email", where email is email you want to use as a password. After that reboot the system to apply the changes.
+		On Linux edit $HOME/moneroocean/config.json file and replace "pass": "xxx" (where xxx is your miner name) by 
+		"pass": "xxx:email", where email is email you want to use as a password. After that reboot the system to apply the changes.
+        </p></span></md-list-item>
+
+
+
+<md-list-item><h3>Payments</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_predicted_reward=!q_predicted_reward">I notice that I am not close to achieving the predicted returns per day. What could be going on here? </a>
+        <p layout-padding ng-show="q_predicted_reward">
+		The predicted rewards make sense only on a long run (week or so) since on pplns pool all rewards are taken from found blocks and
+		couple of recent blocks can have high effort (low luck). See pool block page for exact effort numbers.
+		That of course means that on lucky days you will earn more then projected averages.
+	</p></span></md-list-item>
+
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_pplns=!q_pplns">What is PPLNS reward system?</a>
+        <p layout-padding ng-show="q_pplns">
+		This reward system is determined by proportion of your hashes in the PPLNS window of time before the moment block is found.
+	        Window of time equals to time required to reach 200% block effort.
+		This reward system favors consistent mining and provides protection against pool hoppers (that will reduce rewards of loyal consistent miners otherwise).
+		PPLNS reward system means that you will receive less than normal reward share until you mine longer than PPLNS window size.
+		In addition, you will receive rewards for blocks after you stopped mining as long as your hashes are still in PPLNS window of these blocks.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_orphan_pay=!q_orphan_pay">Does pool pays for orphan blocks?</a>
+        <p layout-padding ng-show="q_orphan_pay">
+		In PPLNS payment system pool distributes payments based on actual pool luck and performance so that in particulair means that orphans
+		are not payed.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_stop=!q_stop">I have too high payment threshold! Do I need to ask pool operator to process payment manually if I want money now?</a>
+        <p layout-padding ng-show="q_stop">
+		No. You can lower your payment threshold in "Options" yourself (as long as it is still higher as 0.03 XMR) and your payment will be normally
+		processed in the next payment wave in two hours.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_min=!q_min">Can I have payment if I have less than 0.03 XMR?</a>
+        <p layout-padding ng-show="q_min">
+		Sorry, no. Minimum payment of 0.03 XMR is hardcoded in the pool code and it is too much mess to workaround it. Please consider to accumulate 0.03 XMR to get payment.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_all=!q_all">How I can get all of my money before I stop mining here?</a>
+        <p layout-padding ng-show="q_all">
+		Due to nature of PPLNS pool reward system you can get rewards even if you stop mining so if you want to get all the money you earned I recommend following this process:
+		<md-list>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;set payment threshold to some big value (that you can not hit);</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;reach at least minimum payment of 0.03;</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;wait for day or so until your due amount will stop increasing after newly found (and unlocked) blocks;</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;set payment threshold back to 0.03.</span></md-list-item>
+		</md-list>
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_nopayment=!q_nopayment">Why pool does not give me my coins? I already reached 0.03 XMR!</a>
+        <p layout-padding ng-show="q_nopayment">
+		Please make sure that your "Total Due" value reached your payment threshold. By default for wallet addresses that are 106 character long or
+		have dot in it (have payment ID) the payment threshold is 1 XMR and for all other wallets it is 0.3 XMR (you can set it to lower value after you login to wallet options on the website).
+		If you are sure that you reached your payment threshold and at least 4 hours passed after that (because payment waves are initiated every
+		two hours and can happen in several iterations) then please contact pool operator (likely payment daemon is stuck).
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_change_wallet=!q_change_wallet">Is there a way to change my wallet address (move amount due from on wallet to another)?</a>
+        <p layout-padding ng-show="q_change_wallet">
+		Generally, no. However it can be reviewed on case by case basis if there is enough evidence that you are asking to move money from wallet you own.
+		That includes setting password for that wallet equal to email you are writing from pool operator, you are not mining for at least one week to your
+		old wallet and other checks that I will not disclose now.
+        </p></span></md-list-item>
+
+
+
+<md-list-item><h3>Port difficulty</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_min_diff=!q_min_diff">What is minimum pool difficulty?</a>
+        <p layout-padding ng-show="q_min_diff">
+		Minimum port difficulty is 100.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fix_diff=!q_fix_diff">What is fixed mining difficulty?</a>
+        <p layout-padding ng-show="q_fix_diff">
+		During manual miner setup you can put your difficulty number after plus sign after your wallet mining address like this
+		"&lt;wallet address&gt;+&lt;difficulty&gt;". In this case, pool will disable dynamic difficulty adjustment and will use difficulty you
+		specified.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_dyn_diff=!q_dyn_diff">What is dynamic port difficulty?</a>
+        <p layout-padding ng-show="q_dyn_diff">
+		If you do not set fixed difficulty then pool will start to dynamically adjust your difficulty starting from initial difficulty determined by your port number.
+		Dynamic adjustment cannot differ more than 10 times from initial difficulty determined by your port number.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_get_diff=!q_get_diff">How determine port number or difficulty based your miner hashrate?</a>
+        <p layout-padding ng-show="q_get_diff">
+		For port number just see its description to determine its recommended hashrate range.
+		To determine optimal difficulty just multiply hashrate of your miner by 20 (which will corresponds to 20 seconds of recommended average timeframe of your miner to prepare proof of its work).
+		Too low difficulty will increase network load, increase pool load and can decrease your miner efficiency.
+		Too high difficulty will lead to outdated results that will be not accepted by the pool.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_wrong_port=!q_wrong_port">Can wrong port cause my miner IP ban?</a>
+        <p layout-padding ng-show="q_wrong_port">
+ 		Yes it can. Port with too high port difficulty can cause 10 minute temporary ban.
+		Ban happens if your miner does not submit shares for like 2 minutes after connection. To make this happen you should put not only high diff
+                but also make it fixed so pool does not have a chance to lower it using
+		auto diff (and auto diff does not have enough time to adjust too high initial port difficulty). Basically it is also protection for mistakes
+		on your side too because mining with too high fixed diff usually consumes your power with lower effect for your rewards (and pool disconnects
+                a good sign that something is not OK).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_no_fixed_diff=!q_no_fixed_diff">Why pool ignored my fixed difficulty?</a>
+        <p layout-padding ng-show="q_no_fixed_diff">
+		If pool detects that you used too low fixed difficulty (10 times less than optimal), then your miner fixed difficulty setting will be ignored
+		and pool will use automatic difficulty instead. This is needed as protection against large amount of low difficulty shares. If you still need
+		fixed difficulty please make it more realistic (increase its value).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_high_proxy=!q_high_proxy">Any special handling of xmrig-proxy or Atreides proxy?</a>
+        <p layout-padding ng-show="q_high_proxy">
+		Pool will adjust difficulty for individual miners of xmrig-proxy and Atreides proxy to high value that corresponds to 5 seconds share
+		submission rate for the cumulative proxy hashrate. This should not affect your hashrate or rewards but will significantly reduce load to the
+		pool.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_nicehash=!q_nicehash">What port to select for nicehash?</a>
+        <p layout-padding ng-show="q_nicehash">
+		Despite the fact thet all ports will set fixed difficulty to 400000 if they detect nicehash miner it is still recommended to select port
+		with high difficulty for nicehash (like 10512 or higher 1xxxx ports). The reason for this is that if nicehash will start to submit shares too
+		often then xmr-node-proxy will be created behind-the-scenes and xmr-node-proxy will use default port difficulty ignoring that 400000 hardcode for nicehash.
+	</p></span></md-list-item>
+
+<md-list-item><h3>Advanced stuff</h3></md-list-item>
+
+	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_addr=!q_addr">Is it possible to easily share/store link to a specific payment details?</a>
+        <p layout-padding ng-show="q_addr">
+		Yes. You can use https://moneroocean.stream/#/dashboard?addr=&lt;your payment address&gt; link to easily open your payment details in other browser.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_api=!q_api">Where is pool API address and its documentation?</a>
+        <p layout-padding ng-show="q_api">
+		API endpoint is <a href="https://api.moneroocean.stream" target="_blank">https://api.moneroocean.stream</a>.
+		API is documented at <a href="https://cryptonote-pool-api.restlet.io/" target="_blank">https://cryptonote-pool-api.restlet.io/</a>.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_ban=!q_ban">What is miner ban policy on this pool?</a>
+        <p layout-padding ng-show="q_ban">
+		Miner can be banned by its IP in the following cases: no login after connect, no submitted results after some time and too many invalid results submitted. Ban can happen on wallet basis as well. Exact threshold and rules are not disclosed but all bans are temporary and range from one to ten minutes.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_invalid=!q_invalid">What is penalty to submit invalid results?</a>
+        <p layout-padding ng-show="q_invalid">
+		There is no penalty except the fact that invalid shares are not counted towards reward calculations and your miner/wallet can be temporary banned if you submit too many of them.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_proxies=!q_proxies">What XMR proxy servers you can you with this pool?</a>
+        <p layout-padding ng-show="q_proxies">
+		You can use all known (to me) XMR proxy servers:
+		<md-list>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;<a href="https://github.com/Snipa22/xmr-node-proxy" target="_blank">xmr-node-proxy</a>. The best proxy but works only on Linux. Will provide the best pool load reduction since it will join all your miners into single one with accumulated difficulty.</span></md-list-item>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;<a href="https://github.com/xmrig/xmrig" target="_blank">xmrig-proxy</a>. Supports Windows and Linux but requires miner with nicehash support. Will provide low pool load reduction since it joins 256 miners into one but will not accumulate their difficulty.</span></md-list-item>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;<a href="https://github.com/Atrides/xmr-proxy" target="_blank">xmr-proxy</a>. Only supports Linux. Provides almost no pool load reduction since it just joins all miners into single TCP connection.</span></md-list-item>
+		</md-list>
+		Any XMR proxy servers make sense to use only if you have more than 10 miners.
+		Because of this pool architecture, the only recommended XMR proxy server is xmr-node-proxy.
+		Usage of other proxy servers will cause almost no positive effect on pool load and will be internally proxied anyway if it will make sense from pool load balancer point of view.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_proxy=!q_proxy">Why my miner names on website are replaced by some "proxy" miner?</a>
+        <p layout-padding ng-show="q_proxy">
+		Congratulations! This means that your total mining speed is high enough and you do not use xmr-node-proxy to decrease it on your own, so pool load balancer decided to move all of your miners under single proxy created on pool's side.
+		You can not track individual miner progress anymore on website. If you want more control over your miners please setup xmr-node-proxy on your own.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_all_other_workers=!q_all_other_workers">Why my miner names on website are replaced by some "all_other_workers" miner?</a>
+        <p layout-padding ng-show="q_all_other_workers">
+		This is because you have more than 50 miner names and to avoid DB/network channel overloads all extra miners are joined under "all_other_workers" miner name.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_100=!q_100">I have a more than 50 miners with different names. Why some of my miners are not shown on the website?</a>
+        <p layout-padding ng-show="q_100">
+		Loading hashrate data from a large amount of miners slows down pool API so that is why as preventive measure pool can limit maximum number of reported miners to 50 (per payment address).
+		That does not mean that not reported miner hashrate is lost - you just can not track their hashrate on website separately and they are reported as single "all_other_workers" miner.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_uptime=!q_u_uptime">Where I can see pool uptime status?</a>
+        <p layout-padding ng-show="q_u_uptime">
+		You can click pool hashrate on the moneroocean.stream pool webpage or go directly here: <a href="https://status.moneroocean.stream/" target="_blank">MoneroOcean pool uptime</a>.
+		In addition, you can visit <a href="https://moneroocean.stream/uptimes/" target="_blank">Monero Pools Uptime</a> page and look for pool uptime there.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_shares=!q_shares">Where I can see number of my submitted shares?</a>
+        <p layout-padding ng-show="q_shares">
+		You can see number of you submitted shares including invalid ones in the tooltip under your total hashes submitted.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_acc_shares=!q_acc_shares">Why number of my submitted shares is so low?</a>
+        <p layout-padding ng-show="q_acc_shares">
+		Pool uses share accumulation technique to allow it to be scaled well and do not crash in case of high volume of low difficulty shares.
+		It works this way: your shares are merged into one until all of these conditions hold true:
+
+		<md-list>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;less than one minute passed since last share merge;</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;current block template not changed;</span></md-list-item>
+			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;accumulated share difficulty does not exceed 1000000 (one million) hashes;</span></md-list-item>
+		</md-list>
+
+		So basically you can consider that your shares are merged into one every minute. Share merge should not affect reward caclulations in any
+		significant way and it does not benefit any particulair group of miners.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_inv_shares=!q_inv_shares">Why number of my invalid shares is more than total number of shares?</a>
+        <p layout-padding ng-show="q_inv_shares">
+		It can happen because valid shares are merged on per minute basis and invalid shares are recorded without any merge.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_miner_name_trunc=!q_miner_name_trunc">Why names of my miners are truncated?</a>
+        <p layout-padding ng-show="q_miner_name_trunc">
+		Pool truncates names of miners by 64 characters to save bandwidth and DB space. This is by design.
+        </p></span></md-list-item>
+
+
+
+<md-list-item><h3>IRC chat</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_irc=!q_irc">How access support chat?</a>
+        <p layout-padding ng-show="q_irc">
+		Just press icon in the top right corner of pool website.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_this_pool=!q_this_pool">How to effectively get support in the chat?</a>
+        <p layout-padding ng-show="q_this_pool">
+		Remember that you are accessing chat for several Monero pools, so please indicate that you are from moneroocean.stream pool before asking question.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_irc_nick=!q_irc_nick">Is it possible to set non generic "minerooceanXX" nickname in the chat?</a>
+        <p layout-padding ng-show="q_irc_nick">
+		Yes, just click pen icon on the left to the input text field you type.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_chatango=!q_chatango">Where is Chatango? I prefer Chatango over IRC as pool chat!</a>
+        <p layout-padding ng-show="q_chatango">
+		Sorry. No Chatango for you here. I respect your love for Chatango but I like IRC client used here more and I believe that #monero-pools IRC channel will provide better support than specialized pool chat. Please write me email if you want to resolve any issue related to this pool. I will do my best to help you.
+        </p></span></md-list-item>
+
+
+<md-list-item><h3>Fees</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_webminer=!q_webminer">What is web mining fee?</a>
+        <p layout-padding ng-show="q_webminer">
+		Web mining fee that is collected by web miner engine (<a href="https://webminerpool.com/" target="_blank">https://webminerpool.com</a>) we are using is 3% at this moment.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fee=!q_fee">What is pool fee?</a>
+        <p layout-padding ng-show="q_fee">
+		Current pool fee is {{config.pplns_fee}}%.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fee_plans=!q_fee_plans">What are plans for fees in the future?</a>
+        <p layout-padding ng-show="q_fee_plans">
+		The plan is to keep zero fees until we reach 2000 mining accounts or pool costs will reach 400 USD monthly. After that fee will be set to
+		0.5% after at least month ahead announcenet via pinned message in Twitter, pool Discord chat, pool main page, reddit and all other forums
+		where I placed pool introduction topic.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_not_scam=!q_not_scam">Why zero fee? Is this a scam?</a>
+        <p layout-padding ng-show="q_not_scam">
+		No. It is not scam. I have aim to grow more or less fast and zero fee is a good selling and advertisement point.
+        	Besides I can pay current pool costs without problem (at least when we are small enough) especially taking into account our advanced pool scaling backend.
+        	Also some of my "whale" friends mine here so I do not want to complicate our business by fees while their impact to pool hashrate is still
+        	significant.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_bad_support=!q_bad_support">Zero fees means bad support or stability?</a>
+        <p layout-padding ng-show="q_bad_support">
+		No. I aim to provide good and stable service.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fee2=!q_fee2">What are payment transfer fees?</a>
+        <p layout-padding ng-show="q_fee2">
+		Pool uses low priority transfer fees (collected by Monero system itself) and approximates them starting from huge 0.004 XMR for
+                0.03 XMR payment (13.3% fee) to 0 XMR fee for 4 XMR payment. Exact transfer fee can be seen in Options when you change your payment
+		threshold. The higher your payment threshold the lower the fees.
+		Fee formula is max (0, 0.004 - ( (PAYMENT_AMOUNT - 0.03) * (0.004 / (4 - 0.03)))).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fee3=!q_fee3">Why 0.004 mininal transfer fee? Monero low priority transfers take less fee (around 0.003)!?</a>
+        <p layout-padding ng-show="q_fee3">
+		0.004 is maximum transaction fee for 0.03 payment. Fees are linearly reduced to 0 for 4.0 xmr payment. You are right that this is
+		just approximation on of Monero tx fees and for 0.03 payment they are like 0.003 now. All extra is accumulated in the pool wallet and
+		used to cover 0 tx fees for 4.0 xmr payments. Also then this extra reaches block level reward I do double block payment to all miners
+		like I already did before.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_fee_many=!q_fee_many">Why my payment that is part of payment to multiple people has too high fee?</a>
+        <p layout-padding ng-show="q_fee_many">
+		Fee on <a href="https://moneroocean.stream/#/payments" target="_blank">global pool payments page</a> to N people (adresses). You effective
+		fee is only based on your payment amount (see "What are payment transfer fees?" question above).
+	</p></span></md-list-item>
+
+<md-list-item><h3>Monero Pools Uptime</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_location=!q_u_location">How can I access Monero Pools Uptime page?</a>
+        <p layout-padding ng-show="q_u_location">
+		Page is located here: <a href="https://moneroocean.stream/uptimes/" target="_blank">Monero Pools Uptime</a>. You can also access it by clicking 
+		on world hashrate on the moneroocean.stream pool webpage.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_cheating=!q_u_cheating">Do you somehow manipulate with data to make some pools look better and/or some worse?</a>
+        <p layout-padding ng-show="q_u_cheating">
+		No. All data collected is not altered in any way. I do not make exception for moneroocean.stream pool too. 
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_how=!q_u_how">How data is collected?</a>
+        <p layout-padding ng-show="q_u_how">
+		I run probes from every AWS region (all 14 of them). Probe that checks status of all pools is on 2 minutes schedule in every region.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_api=!q_u_api">What is API status?</a>
+        <p layout-padding ng-show="q_u_api">
+		I access pool API and try to get pool's hashrate (for some pools that do not expose it via API I read their webpage).
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_stratum=!q_u_stratum">What is Stratum status?</a>
+        <p layout-padding ng-show="q_u_stratum">
+		I try to login to one of pool's ports using common DNS entry points and if pool replies with work template I will consider stratum test passed.
+		This status is tracked under specific pool node IP.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_dns=!q_u_dns">What is DNS status?</a>
+        <p layout-padding ng-show="q_u_dns">
+		I try to access pool stratum using common DNS entry points and can not get any IP I will mark corresponding DNS test as failed.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_ip_vanished=!q_u_ip_vanished">Why some of pool leaf IP dissapear?</a>
+        <p layout-padding ng-show="q_u_ip_vanished">
+		This is because there was no status updates for that specific pool leaf IP (pool DNS not resolved it for one hour or more).
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_100=!q_u_100">The list of OK/down statuses for specific pool service is too short?</a>
+        <p layout-padding ng-show="q_u_100">
+		I only show the last 100 OK/down statuses to avoid loading too big files and causing problems with your browser speed
+		(I'm lazy to do proper pagination for that list). Full list is still stored and processed to get weekly and monthly uptimes.
+		However I do not store more than 1000 statuses that are month old.
+        </p></span></md-list-item>
+
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_u_sorting=!q_u_sorting">How sorting of status percent columns work?</a>
+        <p layout-padding ng-show="q_u_sorting">
+		They are sorted by increasing/decreasing of this formula "API + Stratum*100", so Stratum status is 100 times more important than API.
+        </p></span></md-list-item>
+
+
+</md-list></md-card-content></md-card>
+</div>
