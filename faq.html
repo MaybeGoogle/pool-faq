@@ -7,7 +7,7 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_monero=!q_monero">What is Monero?</a>
         <p layout-padding ng-show="q_monero">
-        	Monero is a secure, private, and untraceable cryptocurrency. It is open-source and accessible to all. Despite many other cryptocurrencies, it is profitable to mine Monero on usual personal computers (CPU and GPU).
+        	Monero is a secure, private, and untraceable cryptocurrency. It is open-source and accessible to all. Unlike many other cryptocurrencies, it is profitable to mine Monero on usual personal computers (CPU and GPU).
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -83,12 +83,12 @@
         <a href="" ng-click="q_waves=!q_waves">Why does my hashrate on the dashboard fluctuate?</a>
         <p layout-padding ng-show="q_waves">
 		It is normal for waves to have amplitude within 20% of your average hashrate.
-		Hashrate fluctuations on website happens because pool have no idea what is your miner hashrate and it derives it from rate of its submitted results that can fluctuate based on your miner luck.
-		Usually the more miners you have the less their overall fluctuation will be (unless they are hidden behind xmr-node-proxy which hashrate fluctuations behave like one miner).
+		Hashrate fluctuations on the dashboard happen because the pool doesn't know your exact miner hashrate, but derives it from rate of its submitted results, that can fluctuate based on your miner luck.
+		Usually the more miners you have the less their overall fluctuation will be (unless they are hidden behind xmr-node-proxy, in which case hashrate fluctuations will behave like one miner).
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_web_miner=!q_web_miner">Why is the web miner on the web site is not working (shows 0 hashrate)?</a>
+        <a href="" ng-click="q_web_miner=!q_web_miner">Why is the web miner not working (shows 0 hashrate)?</a>
         <p layout-padding ng-show="q_web_miner">
 		Try to use your browser's incognito mode or some other browser. If it still does not work please try to use
 		<a href="https://webminerpool.com/" target="_blank">https://webminerpool.com</a>, put your wallet address and select moneroocean.stream
@@ -101,7 +101,7 @@
         <p layout-padding ng-show="q_worker_name">
 		Yes, you can place worker name after wallet address (after . character like this: ".&lt;worker name&gt;").
 		Also it is possible (and actually a more common way) to place worket name in your miner password, like this "&lt;worker name&gt;:&lt;pool password&gt;",
- 		where :&lt;pool password&gt; part is optional and needed if you want to set a pool UI password you can use to login your wallet options on the mining pool website.
+ 		where :&lt;pool password&gt; part is optional, but needed if you want to set a pool UI password you can use to login your wallet options on the mining pool website.
 		Optionally this &lt;pool password&gt; can be your email so you can recieve notifications about worket downtimes.
 	</p></span></md-list-item>
 
@@ -114,11 +114,11 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_ban_addr=!q_ban_addr">What is malware/botnet policy on this pool?</a>
         <p layout-padding ng-show="q_ban_addr">
-		If I will get enough evidence that some wallet address on the pool is used for malware/botnet activities then I will block this address
-		from further mining. By enough evidence I mean at least several reports from different sources. And by address block I mean that 
+		If I get enough evidence that some wallet address on the pool is used for malware/botnet activities then I will block this address
+		from further mining. By enough evidence I mean at least several reports from different sources. And by blocking the address I mean that 
 		miners that try to use this address will be rejected. I do not plan to freeze already mined funds (total due), so they can be retrieved
-		by setting lower threshold in Dashboard Options. If you think you can be accursed of this I strongly recommend to set you dashboard password
-		to valid email address, so I will have a chance to contact you after first such report and you will have ability to set your threshold in
+		by setting lower threshold in Dashboard Options. If you think you can be accused of this I strongly recommend setting your dashboard password
+		to a valid email address, so I will have a chance to contact you after first such report and you will have ability to set your threshold in
 		case of wallet address block later.
         </p></span></md-list-item>
 
@@ -128,19 +128,19 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_main=!q_main">What are the main benefits of this pool?</a>
         <p layout-padding ng-show="q_main">
-		Here are main benefits that this pool provides:
+		Here are the main benefits that this pool provides:
 		<ng-include src="'user/help/welcome.html'"></ng-include>
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_basis=!q_basis">On what software this pool engine and GUI is based?</a>
+        <a href="" ng-click="q_basis=!q_basis">On what software is this pool engine and GUI based?</a>
         <p layout-padding ng-show="q_basis">
 		This pool software is based on <a href="https://github.com/Snipa22/nodejs-pool" target="_blank">nodejs-pool</a> pool engine.
 		Web GUI is based on <a href="https://github.com/mesh0000/poolui" target="_blank">poolui</a> implementation.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_pool_soft=!q_pool_soft">Can I see what are pool software modifications?</a>
+        <a href="" ng-click="q_pool_soft=!q_pool_soft">Can I see what pool software modifications have been made?</a>
         <p layout-padding ng-show="q_pool_soft">
 		Yes. All core pool modifications are open sourced under original license and avaiable from <a href="https://github.com/MoneroOcean/nodejs-pool" target="_blank">nodejs-pool</a> GIT repository.
 		Web GUI modifications are not open sourced basically because I'm lazy to do it (and they are less important IMHO for community).
@@ -153,7 +153,7 @@
 		<md-list>
 	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Significantly reworked user interface with aim to improve its clarity and provide more relevant information</span></md-list-item>
 		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Streamlined process to start mining on your devices without any special knowledge that only requires couple of mouse clicks and copy-pastes</span></md-list-item>
-		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Advanced pool backend with automatic on-demand scaling that do not require to setup proxy by yourself</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;Advanced pool backend with automatic on-demand scaling that does not require to setup proxy by yourself</span></md-list-item>
 		</md-list>
 	</p></span></md-list-item>
 
