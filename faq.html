@@ -67,7 +67,7 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_gulf=!q_gulf">What pool address is recommented for mining?</a>
         <p layout-padding ng-show="q_gulf">
-		I recommend using "gulf.moneroocean.stream" for all cases because 1) it will direct you to the closest server with the lowest
+		We recommend using "gulf.moneroocean.stream" for all cases because 1) it will direct you to the closest server with the lowest
                 latency (and this is the most important thing to consider) and 2) it will automatically redirect your miner to other server if the nearest
                 one goes down for some reason. Using specific gateway nodes like "de.moneroocean.stream", "us.moneroocean.stream" and
 		"jp.moneroocean.stream" make sense only in very, very specific cases that likely do not apply to you.
@@ -152,11 +152,11 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_ban_addr=!q_ban_addr">What is malware/botnet policy on this pool?</a>
         <p layout-padding ng-show="q_ban_addr">
-		If I get enough evidence that some wallet address on the pool is used for malware/botnet activities then I will block this address
-		from further mining. By enough evidence I mean at least several reports from different sources. And by blocking the address I mean that 
-		miners that try to use this address will be rejected. I do not plan to freeze already mined funds (total due), so they can be retrieved
-		by setting lower threshold in Dashboard Options. If you think you can be accused of this I strongly recommend setting your dashboard
-		password to a valid email address, so I will have a chance to contact you after first such report and you will have ability
+		If we get enough evidence that some wallet address on the pool is used for malware/botnet activities then we will block this address
+		from further mining. By enough evidence we mean at least several reports from different sources. And by blocking the address we mean that 
+		miners that try to use this address will be rejected. We do not plan to freeze already mined funds (total due), so they can be retrieved
+		by setting lower threshold in Dashboard Options. If you think you can be accused of this we strongly recommend setting your dashboard
+		password to a valid email address, so we will have a chance to contact you after first such report and you will have ability
 		to set your threshold in case of wallet address block later.
         </p></span></md-list-item>
 
@@ -182,7 +182,7 @@
         <p layout-padding ng-show="q_pool_soft">
 		Yes. All core pool modifications are open sourced under original license and avaiable from
 		<a href="https://github.com/MoneroOcean/nodejs-pool" target="_blank">nodejs-pool</a> GIT repository.
-		Web GUI modifications are not open sourced basically because I'm lazy to do it (and they are less important IMHO for community).
+		Web GUI modifications are not open sourced basically because of lazyness to do it (and they are less important IMHO for community).
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -191,7 +191,7 @@
 		This pool has custom improvements in the following areas:
 		<md-list>
 		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-				Automatic switching between the most profitable cryptonight coin to give you the best rewards in XMR
+				Automatic switching between the most profitable Cryptonight coin to give you the best rewards in XMR
 			</span></md-list-item>
 	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
 				Significantly reworked user interface with aim to improve its clarity and provide more relevant information
@@ -255,6 +255,7 @@
 		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
 				PPS and Solo mining reward systems. No PPS because it is exploitable by pool hoppers.
 				No Solo because we want all pool miners to benefit from joint efforts.
+				Also solo ports are common trap for new miners which later find that all their hashing efforts are lost.
 			</span></md-list-item>
 		</md-list>
 	</p></span></md-list-item>
@@ -268,6 +269,117 @@
 		benefit from. During this transition to a proxy, your miners will be reconnected to a pool and all your miner hashrate stats will
 		be joined under single "proxy" miner. It still make sense to run your own xmr-node-proxy server for better control of your miners.
 	</p></span></md-list-item>
+
+<md-list-item><h3>Altcoin mining</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_why_altcoin=!q_why_altcoin">Why pool mines altcoins and not Monero?</a>
+        <p layout-padding ng-show="q_why_altcoin">
+		Because it is more profitable. Pool automatically converts altcoin block rewards to Monero on exchanges ASAP and you get more Monero for
+		your hashes.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_mine_altcoins=!q_mine_altcoins">What should I do to on my side to mine altcoins?</a>
+        <p layout-padding ng-show="q_mine_altcoins">
+		Nothing. Just mine on this pool using your Monero wallet address and you will automatically mine the most profitable altcoin.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_altcoin_wallet=!q_altcoin_wallet">Do I need to have altcoin wallets to mine them here?</a>
+        <p layout-padding ng-show="q_altcoin_wallet">
+		No. Only Monero wallet is needed because pool do all payments in Monero (XMR).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_alt_pplns=!q_alt_pplns">What is reward system for altcoin block reward distribution?</a>
+        <p layout-padding ng-show="q_alt_pplns">
+		It is also PPLNS where N is determined by double Monero network difficulty at the moment altcoin block is found.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_alt_profit=!q_alt_profit">How altcoin profitability measurement works?</a>
+        <p layout-padding ng-show="q_alt_profit">
+		Pool constantly assesses current profitability of all supported coins in XMR and if any coin is
+		at least 20% more profitable than XMR it will start mining the most profitable of them.
+		Profitability is based on current exchange conversion rates, current coin difficulty and even effort.
+		Exact algorithm and parameters are not disclosed. You can see some more insights if you look into tooltip 
+		over current altcoin name before current block effort number.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_what_altcoin=!q_what_altcoin">What altcoin we are currently mining?</a>
+        <p layout-padding ng-show="q_what_altcoin">
+		Current altcoin name we mine at this moment is listed before current block effort number.
+		Also world hashrate is changed to reflect current altcoin world hashrate
+		and current profitability calculations based on your average graph hashrate are recalculated using current altcoin profitability.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_alt_profit2=!q_alt_profit2">Where I can compare current pool profitability with XMR pool profitability?</a>
+        <p layout-padding ng-show="q_alt_profit2">
+		There is no separate profitability calculator but the one that is based on your dashboard average hashrate is based on current altcoin
+		profitability. So you can compare this number with number your favorite XMR profitability calculator gives for your current average
+		hashrate. But please aware that current altcoin we mine can change quite often so like before to measure pool profitability we recommend 
+		to compare real profits you get over 3-7 day period of time (the longer the more reliable number will be).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_which_altcoins=!q_which_altcoins">Which altcoins mining pool supports now?</a>
+        <p layout-padding ng-show="q_which_altcoins">
+		At this moment, in addition to XMR (Monero) pool also supports ETN (Electroneum) and SUMO (Sumokoin).
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_future_altcoins=!q_future_altcoins">What altcoins mining pool will support in future?</a>
+        <p layout-padding ng-show="q_future_altcoins">
+		Pool can easily support all Cryptonote altcoins. Forknote altcoins are under question because while miner software are compatible 
+		the xmr-node-proxy can not automatically switch between Cryptonote and Forknote coins automatically. If this situation will change in
+		future it will allow support for Forknote coins as well. In addition, there are some additional requirements for new altcoin support:
+		<md-list>
+	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+				It should be present on exchange with good enough volume for this altcoin and XMR.
+				Good enough is around daily pool mining volume.
+			</span></md-list-item>
+		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+				Altcoin network hashrate should at greater than pool hashrate.
+			</span></md-list-item>
+		</md-list>
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_aeon=!q_aeon">Will pool support mining AEON?</a>
+        <p layout-padding ng-show="q_aeon">
+		No. Because AEON uses different PoW called Cryptonight-lite (and not Cryptonight) and miner/xmr-node-proxy software can not switch
+		between these two algorithms on the fly.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_pow_change=!q_pow_change">Will pool continue to mine altcoins after Monero PoW change?</a>
+        <p layout-padding ng-show="q_pow_change">
+		Yes. At this point looks like miner software that support new Monero PoW will also be able to continue mining coins with 
+		old PoW by automatically switching to corresponding PoW. If your miner software will not support that you should migrate to
+		new miner software that will be this support if you want to continue to mine on this pool.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_what_exchanges=!q_what_exchanges">What exchanges are used for altcoin block reward conversion to XMR?</a>
+        <p layout-padding ng-show="q_what_exchanges">
+		At this moment, pool uses Cryptopia (<a href="https://www.cryptopia.co.nz/" target="_blank">https://www.cryptopia.co.nz</a>) exchange
+		for SUMO trades and Qryptos (<a href="https://qryptos.com/" target="_blank">https://qryptos.com</a>) exchange for ETN trades.
+		We use Cryptopia because it is the only option for trades of that coin with good enough volume.
+	</p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_exchange_fee=!q_exchange_fee">What is exchange overhead?</a>
+        <p layout-padding ng-show="q_exchange_fee">
+		While pool still use zero fee using exchanges add small fee overhead. At this moment, it is 0.68% (0.2% BTC buy fee, 0.2% XMR buy fee
+		and 0.28% XMR withdrawal fee). XMR withdrawal fee is determined from the fact that we do withdrawals only over 10 XMR, so 0.028 XMR
+		Cryptopia withdrawal fee corresponds to 0.28% overhead for miners.
+		We apply the same fees for Qryptos exchange as well at this moment despite the fact they are different for it. In future we plan to update
+		code to take into account exchange specific fees.
+	</p></span></md-list-item>
+
 
 <md-list-item><h3>Accessing wallet options</h3></md-list-item>
 
@@ -301,7 +413,7 @@
 		As mentioned in the previous question you should set you miner password to "&lt;your miner name&gt;:&lt;password&gt;". However what is
 		&lt;your miner name&gt;? It can be any name actually (without ":" character) that describes your miner. It really only affects how this
 		miner will be represented in the pool dashboard. You can use many miners with the same name if you do not need
-		to see their separate statistics. In fact I recommend to use single name if you have more than 50 uniform miners
+		to see their separate statistics. In fact we recommend to use single name if you have more than 50 uniform miners
 		because it will help to reduce load to the pool.
 	</p></span></md-list-item>
 
@@ -428,7 +540,7 @@
         <a href="" ng-click="q_all=!q_all">How I can get all of my money before I stop mining here?</a>
         <p layout-padding ng-show="q_all">
 		Due to nature of PPLNS pool reward system you can get rewards even if you stop mining
-		so if you want to get all the money you earned I recommend following this process:
+		so if you want to get all the money you earned we recommend following this process:
 		<md-list>
 			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
 				set payment threshold to some big value (that you can not hit);
@@ -450,7 +562,8 @@
         <p layout-padding ng-show="q_nopayment">
 		Please make sure that your "Total Due" value reached your payment threshold. By default for wallet addresses that are 106 character long
 		or have dot in it (have payment ID) the payment threshold is 1 XMR and for all other wallets it is 0.3 XMR
-		(you can set it to lower value after you login to wallet options on the website).
+		(you can set it to lower value after you login to wallet options on the website). This payment threshold can be lowered in your dashboard
+		options down to 0.03 XMR for any type of address.
 		If you are sure that you reached your payment threshold and at least 4 hours passed after that (because payment waves are initiated every
 		two hours and can happen in several iterations) then please contact pool operator (likely payment daemon is stuck).
         </p></span></md-list-item>
@@ -460,7 +573,7 @@
         <p layout-padding ng-show="q_change_wallet">
 		Generally, no. However it can be reviewed on case by case basis if there is enough evidence that you are asking to move money from
 		wallet you own.	That includes setting password for that wallet equal to email you are writing from pool operator,
-		you are not mining for at least one week to your old wallet and other checks that I will not disclose now.
+		you are not mining for at least one week to your old wallet and other checks that we will not disclose now.
         </p></span></md-list-item>
 
 
@@ -537,7 +650,9 @@
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_throttle=!q_throttle">Why I'm reciving "Throttle down share submission (please use xmr-node-proxy)" errors from pool?</a>
+        <a href="" ng-click="q_throttle=!q_throttle">
+		Why I'm reciving "Throttled down share submission (please increase diff or use xmr-node-proxy)" errors from pool?
+	</a>
         <p layout-padding ng-show="q_throttle">
 		Because you are submitting too many shares and do not use any proxy. Pool protect itself (and other miners) from large amount of shares
 		that it need to verify from your workers (that cause pool CPU overload) and will ignore results that recieve this pool respose. Moreover
@@ -703,9 +818,9 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_chatango=!q_chatango">Where is Chatango? I prefer Chatango over IRC as pool chat!</a>
         <p layout-padding ng-show="q_chatango">
-		Sorry. No Chatango for you here. I respect your love for Chatango but I like IRC client used here more and I
+		Sorry. No Chatango for you here. We respect your love for Chatango but we like IRC client used here more and we
 		believe that #monero-pools IRC channel will provide better support than specialized pool chat.
-		Please write me email if you want to resolve any issue related to this pool. I will do my best to help you.
+		Please write me email if you want to resolve any issue related to this pool. We will do our best to help you.
         </p></span></md-list-item>
 
 
@@ -729,22 +844,22 @@
         <p layout-padding ng-show="q_fee_plans">
 		The plan is to keep zero fees until we reach 2000 mining accounts or pool costs will reach 400 USD monthly. After that fee will be set to
 		0.5% after at least month ahead announcenet via pinned message in Twitter, pool Discord chat, pool main page, reddit and all other forums
-		where I placed pool introduction topic.
+		where we placed pool introduction topic.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_not_scam=!q_not_scam">Why zero fee? Is this a scam?</a>
         <p layout-padding ng-show="q_not_scam">
-		No. It is not scam. I have aim to grow more or less fast and zero fee is a good selling and advertisement point.
-        	Besides I can pay current pool costs without problem (at least when we are small enough) especially taking into account
-		our advanced pool scaling backend. Also some of my "whale" friends mine here so I do not want to complicate our business
+		No. It is not scam. We have aim to grow more or less fast and zero fee is a good selling and advertisement point.
+        	Besides we can pay current pool costs without problem (at least when we are small enough) especially taking into account
+		our advanced pool scaling backend. Also some of our "whale" friends mine here so we do not want to complicate our business
 		by fees while their impact to pool hashrate is still significant.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_bad_support=!q_bad_support">Zero fees means bad support or stability?</a>
         <p layout-padding ng-show="q_bad_support">
-		No. I aim to provide good and stable service.
+		No. We aim to provide good and stable service.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -761,8 +876,8 @@
         <p layout-padding ng-show="q_fee3">
 		0.004 is maximum transaction fee for 0.03 payment. Fees are linearly reduced to 0 for 4.0 xmr payment. You are right that this is
 		just approximation on of Monero tx fees and for 0.03 payment they are like 0.003 now. All extra is accumulated in the pool wallet and
-		used to cover 0 tx fees for 4.0 xmr payments. Also then this extra reaches block level reward I do double block payment to all miners
-		like I already did before.
+		used to cover 0 tx fees for 4.0 xmr payments. Also then this extra reaches block level reward we do double block payment to all miners
+		like we already did before.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -784,32 +899,32 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_cheating=!q_u_cheating">Do you somehow manipulate with data to make some pools look better and/or some worse?</a>
         <p layout-padding ng-show="q_u_cheating">
-		No. All data collected is not altered in any way. I do not make exception for moneroocean.stream pool too. 
+		No. All data collected is not altered in any way. We do not make exception for moneroocean.stream pool too. 
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_how=!q_u_how">How data is collected?</a>
         <p layout-padding ng-show="q_u_how">
-		I run probes from every AWS region (all 14 of them). Probe that checks status of all pools is on 2 minutes schedule in every region.
+		We run probes from every AWS region (all 14 of them). Probe that checks status of all pools is on 2 minutes schedule in every region.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_api=!q_u_api">What is API status?</a>
         <p layout-padding ng-show="q_u_api">
-		I access pool API and try to get pool's hashrate (for some pools that do not expose it via API I read their webpage).
+		We access pool API and try to get pool's hashrate (for some pools that do not expose it via API we read their webpage).
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_stratum=!q_u_stratum">What is Stratum status?</a>
         <p layout-padding ng-show="q_u_stratum">
-		I try to login to one of pool's ports using common DNS entry points and if pool replies with work template
-		I will consider stratum test passed. This status is tracked under specific pool node IP.
+		We try to login to one of pool's ports using common DNS entry points and if pool replies with work template
+		We will consider stratum test passed. This status is tracked under specific pool node IP.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_dns=!q_u_dns">What is DNS status?</a>
         <p layout-padding ng-show="q_u_dns">
-		I try to access pool stratum using common DNS entry points and can not get any IP I will mark corresponding DNS test as failed.
+		We try to access pool stratum using common DNS entry points and can not get any IP we will mark corresponding DNS test as failed.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -821,9 +936,9 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_100=!q_u_100">The list of OK/down statuses for specific pool service is too short?</a>
         <p layout-padding ng-show="q_u_100">
-		I only show the last 100 OK/down statuses to avoid loading too big files and causing problems with your browser speed
-		(I'm lazy to do proper pagination for that list). Full list is still stored and processed to get weekly and monthly uptimes.
-		However I do not store more than 1000 statuses that are month old.
+		We only show the last 100 OK/down statuses to avoid loading too big files and causing problems with your browser speed
+		(too lazy to do proper pagination for that list). Full list is still stored and processed to get weekly and monthly uptimes.
+		However we do not store more than 1000 statuses that are month old.
         </p></span></md-list-item>
 
 
