@@ -8,7 +8,7 @@
         <a href="" ng-click="q_monero=!q_monero">What is Monero?</a>
         <p layout-padding ng-show="q_monero">
         	Monero is a secure, private, and untraceable cryptocurrency. It is open-source and accessible to all.
-		Unlike many other cryptocurrencies, it is profitable to mine Monero on usual personal computers (CPU and GPU).
+		Unlike many other cryptocurrencies, it is profitable to mine Monero on normal personal computers (CPU and GPU).
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -20,7 +20,7 @@
 			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;A Monero payment address</span></md-list-item>
 			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;A miner<md-list>
 				<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-					You can find basic instructions in "Setup Miner" after you enter your payment address on
+					You can find basic instructions in "Setup Miner" after you enter your payment address on the
 					<a href="https://moneroocean.stream/#/dashboard" target="_blank">dashboard page</a>.
 				</span></md-list-item>
 				<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -70,29 +70,29 @@
 		We recommend using "gulf.moneroocean.stream" for all cases because 1) it will direct you to the closest server with the lowest
                 latency (and this is the most important thing to consider) and 2) it will automatically redirect your miner to other server if the nearest
                 one goes down for some reason. Using specific gateway nodes like "de.moneroocean.stream", "us.moneroocean.stream" and
-		"jp.moneroocean.stream" make sense only in very, very specific cases that likely do not apply to you.
+		"jp.moneroocean.stream" makes sense only in very, very specific cases that likely do not apply to you.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_miner_number=!q_miner_number">Does joining a server near to my location give me more shares?</a>
         <p layout-padding ng-show="q_miner_number">
-		Always prefer nearest server. It does not matter how many miners are on any particular server -
-		rewards are distributed proportionally to hash-rate you bring to the whole pool.
+		You should always prefer the nearest server. It does not matter how many miners are on any particular server -
+		rewards are distributed proportionally to the hash-rate you bring to the entire pool.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_miner=!q_miner">What will be installed if I will run automatic CPU miner setup script from this site?</a>
+        <a href="" ng-click="q_miner=!q_miner">What will be installed if I run the automatic CPU miner setup script from this site?</a>
         <p layout-padding ng-show="q_miner">
 		No malware will be installed. Setup scripts will try to install the latest stock binaries of
 		<a href="https://github.com/xmrig/xmrig/releases" target="_blank">xmrig miner</a> and if they will not work
-		(for example you have old version of Linux or antivirus removed them) it will try privately compiled versions of xmrig
-		that have better compatibility with old version of Linux (for example CentOS 6) and are not detected by know antivirus software.
-		Script will also try to configure miner to run in low priority mode so it will not affect usual programs
+		(for example you have old version of Linux or your antivirus removed them) it will try privately compiled versions of xmrig
+		that have better compatibility with old version of Linux (for example CentOS 6) and are not detected by known antivirus software.
+		Script will also try to configure the miner to run in low priority mode so it will not affect normal programs,
 		and setup miner to be activated after reboot. Setup scripts have quite verbose output and will comment every single step they are doing.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_uninstall=!q_uninstall">How I can uninstall miner installed using moneroocean CPU miner setup scripts?</a>
+        <a href="" ng-click="q_uninstall=!q_uninstall">How do I uninstall miner installed using moneroocean CPU miner setup scripts?</a>
         <p layout-padding ng-show="q_uninstall">
 		If you no longer want to mine using miner that was installed using setup script from moneroocean site
 		you can disable it using these directions:
@@ -139,11 +139,11 @@
 		Also it is possible (and actually a more common way) to place worket name in your miner password,
 		like this "&lt;worker name&gt;:&lt;pool password&gt;", where :&lt;pool password&gt; part is optional,
 		but needed if you want to set a pool UI password you can use to login your wallet options on the mining pool website.
-		Optionally this &lt;pool password&gt; can be your email so you can recieve notifications about worket downtimes.
+		Optionally this &lt;pool password&gt; can be your email so you can recieve notifications about worker downtimes.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_email=!q_email">How contact pool operator?</a>
+        <a href="" ng-click="q_email=!q_email">How do I contact the pool operator?</a>
         <p layout-padding ng-show="q_email">
 		For private matters, please write an email to <a href="mailto:support@moneroocean.stream">support@moneroocean.stream</a>
 		or contact us via <a href="https://twitter.com/MoneroOcean" target="_blank">@MoneroOcean</a> for public matters.
@@ -152,12 +152,12 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_ban_addr=!q_ban_addr">What is malware/botnet policy on this pool?</a>
         <p layout-padding ng-show="q_ban_addr">
-		If we get enough evidence that some wallet address on the pool is used for malware/botnet activities then we will block this address
+		If we get enough evidence that some wallet address on the pool is used for malware/botnet activities, then we will block this address
 		from further mining. By enough evidence we mean at least several reports from different sources. And by blocking the address we mean that 
 		miners that try to use this address will be rejected. We do not plan to freeze already mined funds (total due), so they can be retrieved
-		by setting lower threshold in Dashboard Options. If you think you can be accused of this we strongly recommend setting your dashboard
+		by setting lower payment threshold in Dashboard Options. If you think you can be accused of this we strongly recommend setting your dashboard
 		password to a valid email address, so we will have a chance to contact you after first such report and you will have ability
-		to set your threshold in case of wallet address block later.
+		to set your payment threshold in case of wallet address block later.
         </p></span></md-list-item>
 
 
@@ -255,7 +255,7 @@
 		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
 				PPS and Solo mining reward systems. No PPS because it is exploitable by pool hoppers.
 				No Solo because we want all pool miners to benefit from joint efforts.
-				Also solo ports are common trap for new miners which later find that all their hashing efforts are lost.
+				Also solo ports are a common trap for new miners which later find that all their hashing efforts are lost due to not finding a block.
 			</span></md-list-item>
 		</md-list>
 	</p></span></md-list-item>
@@ -267,20 +267,20 @@
 		if they will start causing high load on the pool. This together with some advanced diffuculty handling algorithms allows offering support
 		of very low speed (up to 5 H /s) miners with minimum difficulty 100 and ensuring consistently low pool load that all miners will
 		benefit from. During this transition to a proxy, your miners will be reconnected to a pool and all your miner hashrate stats will
-		be joined under single "proxy" miner. It still make sense to run your own xmr-node-proxy server for better control of your miners.
+		be joined under single "proxy" miner. It still makes more sense to run your own xmr-node-proxy server for better control of your miners.
 	</p></span></md-list-item>
 
 <md-list-item><h3>Altcoin mining</h3></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_why_altcoin=!q_why_altcoin">Why pool mines altcoins and not Monero?</a>
+        <a href="" ng-click="q_why_altcoin=!q_why_altcoin">Why does this pool mine altcoins and not Monero?</a>
         <p layout-padding ng-show="q_why_altcoin">
 		Because it is more profitable. Pool automatically converts altcoin block rewards to Monero on exchanges ASAP and you get more Monero for
 		your hashes.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_why_still_moneroocean=!q_why_still_moneroocean">Why pool is named moneroocean and not always mine Monero?</a>
+        <a href="" ng-click="q_why_still_moneroocean=!q_why_still_moneroocean">Why is the pool named Moneroocean and does not always mine Monero?</a>
         <p layout-padding ng-show="q_why_still_moneroocean">
 		Because we still pay in Monero.
 	</p></span></md-list-item>
@@ -316,8 +316,8 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_alt_profit=!q_alt_profit">How altcoin profitability measurement works?</a>
         <p layout-padding ng-show="q_alt_profit">
-		Pool constantly assesses current profitability of all supported coins in XMR and if any coin is
-		at least 20% more profitable than XMR it will start mining the most profitable of them.
+		Pool constantly assesses current profitability of all supported coins in XMR, and if any coin is
+		at least 20% more profitable than XMR, it will automatically start mining the most profitable of them.
 		Profitability is based on current exchange conversion rates, current coin difficulty and even effort.
 		Exact algorithm and parameters are not disclosed. You can see some more insights if you look into tooltip 
 		over current altcoin name before current block effort number.
@@ -327,7 +327,7 @@
         <a href="" ng-click="q_what_altcoin=!q_what_altcoin">What altcoin we are currently mining?</a>
         <p layout-padding ng-show="q_what_altcoin">
 		Current altcoin name we mine at this moment is listed before current block effort number.
-		Also world hashrate is changed to reflect current altcoin world hashrate
+		Also, the world hashrate displayed on the dashboard is changed to reflect current altcoin world hashrate,
 		and current profitability calculations based on your average graph hashrate are recalculated using current altcoin profitability.
 	</p></span></md-list-item>
 
@@ -354,11 +354,11 @@
 		future it will allow support for Forknote coins as well. In addition, there are some additional requirements for new altcoin support:
 		<md-list>
 	        	<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-				It should be present on exchange with good enough volume for this altcoin and XMR.
-				Good enough is around daily pool mining volume.
+				It should be present on exchange with high enough volume for this altcoin and XMR.
+				High enough is around daily pool mining volume.
 			</span></md-list-item>
 		        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-				Altcoin network hashrate should at greater than pool hashrate.
+				Altcoin network hashrate should be greater than pool hashrate.
 			</span></md-list-item>
 		</md-list>
 	</p></span></md-list-item>
@@ -371,10 +371,10 @@
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_pow_change=!q_pow_change">Will pool continue to mine altcoins after Monero PoW change?</a>
+        <a href="" ng-click="q_pow_change=!q_pow_change">Will the pool continue to mine altcoins after Monero PoW change?</a>
         <p layout-padding ng-show="q_pow_change">
-		Yes. At this point looks like miner software that support new Monero PoW will also be able to continue mining coins with 
-		old PoW by automatically switching to corresponding PoW. If your miner software will not support that you should migrate to
+		Yes. At this point looks like miner software that support the new Monero PoW will also be able to continue mining coins with 
+		the old PoW by automatically switching to the correct PoW. If your miner software will not support that you should migrate to
 		new miner software that will be this support if you want to continue to mine on this pool.
 	</p></span></md-list-item>
 
@@ -383,14 +383,14 @@
         <p layout-padding ng-show="q_what_exchanges">
 		At this moment, pool uses Cryptopia (<a href="https://www.cryptopia.co.nz/" target="_blank">https://www.cryptopia.co.nz</a>) exchange
 		for SUMO trades and Qryptos (<a href="https://qryptos.com/" target="_blank">https://qryptos.com</a>) exchange for ETN trades.
-		We use Cryptopia because it is the only option for trades of these coins with good enough volume.
+		We use Cryptopia because it is the only option for trades of these coins with high enough volume.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_exchange_fee=!q_exchange_fee">What is exchange overhead?</a>
         <p layout-padding ng-show="q_exchange_fee">
-		While pool still use zero fee using exchanges add small fee overhead. At this moment, it is 0.68% (0.2% BTC buy fee, 0.2% XMR buy fee
-		and 0.28% XMR withdrawal fee). XMR withdrawal fee is determined from the fact that we do withdrawals only over 10 XMR, so 0.028 XMR
+		While pool still use zero fee, using exchanges adds a small fee overhead. At this moment, it is 0.68% (0.2% BTC buy fee, 0.2% XMR buy fee
+		and 0.28% XMR withdrawal fee). XMR withdrawal fees are determined from the fact that we do withdrawals only over 10 XMR, so 0.028 XMR
 		Cryptopia withdrawal fee corresponds to 0.28% overhead for miners.
 		We apply the same fees for Qryptos exchange as well at this moment despite the fact they are different for it. In future we plan to update
 		code to take into account exchange specific fees.
