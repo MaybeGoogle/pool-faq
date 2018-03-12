@@ -103,13 +103,13 @@
 				%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup or %USERPROFILE%\Start Menu\Programs\Startup
 				directory if you installed miner under non admin mode otherwise run "sc delete moneroocean_miner" command under admin
 				command prompt.
-				On just run <code>powershell -Command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://moneroocean.stream/miner/uninstall_moneroocean_miner.bat', $tempfile); &amp; $tempfile; Remove-Item -Force $tempfile"</code> command.
+				On just run <span style="font-family: monospace">powershell -Command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://moneroocean.stream/miner/uninstall_moneroocean_miner.bat', $tempfile); &amp; $tempfile; Remove-Item -Force $tempfile"</span> command.
 			</span></md-list-item>
 			<md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
 				On Linux host remove call to moneroocean/miner.sh
 				script in the bottom of your $HOME/.profile file or run "sudo systemctl stop moneroocean_miner.service" if setup script
 				was executed with password-less sudo.
-				Or just run <code>curl -s -L https://moneroocean.stream/miner/uninstall_moneroocean_miner.sh | bash -s</code> command.
+				Or just run <span style="font-family: monospace">curl -s -L https://moneroocean.stream/miner/uninstall_moneroocean_miner.sh | bash -s</span> command.
 			</span></md-list-item>
 		</md-list>
 
