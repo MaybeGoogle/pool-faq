@@ -795,7 +795,7 @@
 		</md-list>
 
 		So basically you can consider that your shares are merged into one every minute.
-		Share merge should not affect reward caclulations in any significant way and it does not benefit any particulair group of miners.
+		Share merge should not affect reward calculations in any significant way and it does not benefit any particulair group of miners.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -917,7 +917,7 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_u_cheating=!q_u_cheating">Do you somehow manipulate with data to make some pools look better and/or some worse?</a>
         <p layout-padding ng-show="q_u_cheating">
-		No. All data collected is not altered in any way. We do not make exception for moneroocean.stream pool too. 
+		No. All data collected is not altered in any way. No exception for moneroocean.stream pool too. 
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -946,7 +946,7 @@
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
-        <a href="" ng-click="q_u_ip_vanished=!q_u_ip_vanished">Why some of pool leaf IP dissapear?</a>
+        <a href="" ng-click="q_u_ip_vanished=!q_u_ip_vanished">Why some of pool leaf IP disappear?</a>
         <p layout-padding ng-show="q_u_ip_vanished">
 		This is because there was no status updates for that specific pool leaf IP (pool DNS not resolved it for one hour or more).
         </p></span></md-list-item>
@@ -966,6 +966,83 @@
 		They are sorted by increasing/decreasing of this formula "API + Stratum*100", so Stratum status is 100 times more important than API.
         </p></span></md-list-item>
 
+<md-list-item><h3>Monero Pools Profits</h3></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_location=!q_p_location">How can I access Monero Pools Profits page?</a>
+        <p layout-padding ng-show="q_p_location">
+		Page is located here: <a href="https://moneroocean.stream/profits/" target="_blank">Monero Pools Profits</a>.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_percent=!q_p_percent">What does these percent mean?</a>
+        <p layout-padding ng-show="q_p_percent">
+		They mean relative pool profit differences within given time period (day, week, month).
+		100 percent correspond to a pool with a highest profit for specific time period.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_update_time=!q_p_update_time">How often profit page is updated?</a>
+        <p layout-padding ng-show="q_p_update_time">
+		Every hour.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_na=!q_p_na">What does N/A means?</a>
+        <p layout-padding ng-show="q_p_na">
+		It means there is no profit data for that period of time for that pool.
+		Usually because pool API was down during that time or it started to accumulate profit data not so long ago.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_calc=!q_p_calc">How profits are calculated?</a>
+        <p layout-padding ng-show="q_p_calc">
+		Difficulty of accepted shares (pool autodiff is taken into account) is accumulated as number of hashes for each pool.
+		Profitability is calculated as total due (reported by pool API) divided by number of accepted hashes
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_audit=!q_p_audit">Is it possible to share wallet address or other raw profit data?</a>
+        <p layout-padding ng-show="q_p_audit">
+		Sorry. It is not possible to share wallet address or any raw stats like total due or number of submitted hashes since it will
+		allow pool operators to find wallet used for profit measurements and manipulate its total due.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_overall=!q_p_overall">What is overall profits column?</a>
+        <p layout-padding ng-show="q_p_overall">
+		It is profits since the beginning of 2018 year (when these profit measurements started).
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_limits=!q_p_limits">What is can be considered as drawback of profit calculation method utilized?</a>
+        <p layout-padding ng-show="q_p_limits">
+		Data is collected using single &lt;200 H/s miner that at any given moment of time submits hashes to one of these pools
+		and only accepted shares are counted.
+		Total number of hashes submitted to these pools is balanced to be equal however, their distribution is not absolutely uniform
+		because pools has different minimum difficulties.
+		No scientific explanations were found why this method could benefit some pools over others so with given disclaimer it is good enough
+		to do measurements over long (week+) periods.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_pool_vanished=!q_p_pool_vanished">Why some of pools disappear from time to time?</a>
+        <p layout-padding ng-show="q_p_pool_vanished">
+		It means that this pool API was down not so long ago. This will not affect profit calculations since only accepted shares are counted.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_down=!q_p_down">If pool is down will it affect its profitability?</a>
+        <p layout-padding ng-show="q_p_down">
+		While it affect your profitability the pool stratum downtimes will not affect profitability measurements since
+		only accepted shares are counted.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_cheating=!q_p_cheating">Do you somehow manipulate with data to make some pools look better and/or some worse?</a>
+        <p layout-padding ng-show="q_p_cheating">
+		No. All data collected is not altered in any way. No exception for moneroocean.stream pool too. 
+        </p></span></md-list-item>
 
 </md-list></md-card-content></md-card>
 </div>
