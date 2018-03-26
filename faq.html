@@ -633,12 +633,7 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_wrong_port=!q_wrong_port">Can wrong port cause my miner IP ban?</a>
         <p layout-padding ng-show="q_wrong_port">
- 		Yes it can. Port with too high port difficulty can cause 10 minute temporary ban.
-		Ban happens if your miner does not submit shares for like 2 minutes after connection.
-		To make this happen you should put not only high diff but also make it fixed so pool does not have a chance to lower it using
-		auto diff (and auto diff does not have enough time to adjust too high initial port difficulty).
-		Basically it is also protection for mistakes on your side too because mining with too high fixed diff usually
-		consumes your power with lower effect for your rewards (and pool disconnects a good sign that something is not OK).
+		Not it can't.
 	</p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
@@ -698,8 +693,7 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_ban=!q_ban">What is miner ban policy on this pool?</a>
         <p layout-padding ng-show="q_ban">
-		Miner can be banned by its IP in the following cases: no login after connect,
-		no submitted results after some time and too many invalid results submitted.
+		Miner can be banned by its IP in the following cases: no login after connect and too many invalid results submitted.
 		Ban can happen on wallet basis as well. Exact threshold and rules are not disclosed but
 		all bans are temporary and range from one to ten minutes.
         </p></span></md-list-item>
@@ -1034,8 +1028,34 @@
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
         <a href="" ng-click="q_p_down=!q_p_down">If pool is down will it affect its profitability?</a>
         <p layout-padding ng-show="q_p_down">
-		While it affect your profitability the pool stratum downtimes will not affect profitability measurements since
+		While pool downtimes affect your profitability in our case they are not important since
 		only accepted shares are counted.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_ping=!q_p_ping">Does pool ping from our mining server affect profitability?</a>
+        <p layout-padding ng-show="q_p_ping">
+		While ping affects your profitability the ping from our mining server will not affect it since
+		only accepted shares are counted.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_pplns=!q_p_pplns">What ports are used on all pools?</a>
+        <p layout-padding ng-show="q_p_pplns">
+		Exact port number is not disclosed, but only PPLNS non-SSL ports are used on all pools.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_minergate=!q_p_minergate">What pool is used on Minergate? PPS or PPLNS?</a>
+        <p layout-padding ng-show="q_p_minergate">
+		PPS pool is used.
+        </p></span></md-list-item>
+
+        <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
+        <a href="" ng-click="q_p_minergate_overall=!q_p_minergate_overall">Why there is no overall profit numbers for Minergate?</a>
+        <p layout-padding ng-show="q_p_minergate_overall">
+		Because Minergate measurements began later and it is not fair to use it for overall profit comparisons (just because it was more
+		profitable to mine Monero). All pools must be in the same conditions to make comparison meaningful.
         </p></span></md-list-item>
 
         <md-list-item><span><md-icon md-font-set="material-icons">star</md-icon>&emsp;
